@@ -1,0 +1,161 @@
+:root {
+    --foreground: black;
+    --foreground-inverse: white;
+    --background: white;
+    --background-inverse: black;
+}
+
+body {
+    color: var(--foreground);
+    font-family: "Fira Sans";
+    font-size: 16px;
+    padding: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: dodgerblue;
+    font-family: "Inter";
+    margin: 0 0 0.5em;
+}
+
+.course {
+    color: var(--foreground-inverse);
+
+    &.stem {
+        &.core {
+            background-color: #F37272;
+        }
+
+        &.distribution {
+            background-color: #FF3535;
+        }
+
+        &.major {
+            background-color: #F144B0;
+        }
+
+        &.elective {
+            background-color: #F3A872;
+        }
+
+        &.major.elective {
+            background-color: #FF8935;
+        }
+
+        &.major.distribution {
+            background: linear-gradient(to right, #FF3535, #F144B0);
+        }
+    }
+
+    &.liberal {
+        background-color: #4569EF;
+
+        &.fws {
+            background-color: #681CEC;
+        }
+    }
+
+    &.pe {
+        background-color: #28A50E;
+    }
+
+    &.other {
+        background-color: #9A9A9A;
+    }
+}
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    
+    li {
+        display: block;
+        box-shadow: 0 0 0.5rem 0 rgba(black, 0.25);
+
+        width: 15rem;
+        margin: 0.25rem;
+        padding: 0.75rem;
+
+        font-weight: bold;
+    }
+}
+
+.year {
+    padding: 1rem 0;
+
+    .semesters {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+        
+        .semester {
+            margin: 0 1rem;
+            width: 20rem;
+
+            .courses {
+                list-style: none;
+                padding: 0;
+            
+                .course {
+                    display: grid;
+                    margin: 0.5rem 0;
+                    
+                    grid-template-columns: 1fr 3rem;
+                    grid-template-rows: auto auto;
+                    
+                    color: var(--foreground-inverse);
+                    box-shadow: 0 0 0.5rem 0 rgba(black, 0.25);
+
+                    .code {
+                        font-weight: bold;
+                        grid-row: 1;
+                        grid-column: 1;
+                        margin: 0.75rem 1rem 0;
+                    }
+
+                    .name {
+                        grid-row: 2;
+                        grid-column: 1;
+                        margin: 0 1rem 0.75rem;
+
+                        font-stretch: condensed;
+                    }
+
+                    .credits {
+                        display: grid;
+                        grid-row: 1 / 3;
+                        grid-column: 2;
+
+                        background: var(--background);
+                        color: var(--foreground);
+
+                        align-content: center;
+                        justify-content: center; 
+                        margin: 1px;  
+                    }
+                }
+
+                .empty {
+                    display: grid;
+                    justify-content: center;
+                    align-content: center;
+
+                    height: 4rem;
+
+                    border: 1px dashed rgba(black, 0.5);
+                    opacity: 0.5;
+                    -moz-user-select: none;
+                    -webkit-user-select: none;
+                }
+            }
+        }
+    }
+}
