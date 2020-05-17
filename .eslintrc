@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "@laptou/eslint-config-typescript"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}
